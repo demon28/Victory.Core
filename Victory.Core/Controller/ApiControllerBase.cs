@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Victory.Core.Controller;
 
-namespace YH.ASM.Web.ControllerBase
+namespace Victory.Core.Controller
 {
  
     [Route("api/[controller]/[action]")]

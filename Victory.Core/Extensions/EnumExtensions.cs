@@ -51,5 +51,20 @@ namespace Victory.Core.Extensions
                      Value = x
                  }).ToList();
         }
+
+        /// <summary>
+        /// 获取枚举的描述
+        /// </summary>
+        /// <param name="enumValue"></param>
+        /// <returns></returns>
+        public static string GetDescription(this Enum enumValue)
+        {
+            string value = enumValue.ToString();
+            System.Reflection.FieldInfo field = enumValue.GetType().GetField(value);
+            object[] objs = field.GetCustomAttributes(typeof(System.ComponentModel.DescriptionAttribute), false);
+            if (objs == null || objs.Length == 0) return value;
+            System.ComponentModel.DescriptionAttribute attr = (System.ComponentModel.DescriptionAttribute)objs[0];
+            return attr.Description;
+        }
     }
 }

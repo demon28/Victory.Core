@@ -4,14 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Near</Authors>
-    <Description>1.0版本：
-1，控制器
-2，加密类
-3，枚举
-4，扩展方法
-5，帮助类
-6，实体
-7，输出类</Description>
+    <Description>修改confighelper</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
