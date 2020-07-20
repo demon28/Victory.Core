@@ -15,15 +15,15 @@ namespace Victory.Core.Helpers
     {
         private static IConfiguration _configuration;
 
-        static ConfigHelper()
+        public ConfigHelper(string filename)
         {
-            BuildConfiguration();
+            BuildConfiguration(filename);
         }
 
-        private static void BuildConfiguration()
+        private void BuildConfiguration(string filename)
         {
             var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", false).AddJsonFile("appsettings.Development.json", true);
+                .AddJsonFile(filename);
             _configuration = builder.Build();
         }
 
@@ -31,18 +31,18 @@ namespace Victory.Core.Helpers
         /// 读取指定节点信息
         /// </summary>
         /// <param name="key">节点名称，多节点以:分隔</param>
-        public static string Get(string key)
+        public string GetSingle(string key)
         {
-            return _configuration[key];
+            return _configuration.GetSection(key).Value;
         }
 
         /// <summary>
         /// 读取指定节点信息
         /// </summary>
-        public static T Get<T>(string key)
+        public T Get<T>(string key)
         {
-            string json = Get(key);
-            return JsonConvert.DeserializeObject<T>(json);
+            return _configuration.GetSection(key).Get<T>();
+
         }
     }
 }
