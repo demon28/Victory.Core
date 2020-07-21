@@ -4,8 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Near</Authors>
-    <Description>修改confighelper</Description>
-    <Version>1.0.2</Version>
+    <Description>修改时间戳</Description>
+    <Version>1.0.8</Version>
   </PropertyGroup>
 
   <ItemGroup>

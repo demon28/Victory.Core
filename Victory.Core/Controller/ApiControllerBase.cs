@@ -9,7 +9,7 @@ using Victory.Core.Controller;
 
 namespace Victory.Core.Controller
 {
- 
+   
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class ApiControllerBase:TopControllerBase
@@ -20,6 +20,7 @@ namespace Victory.Core.Controller
         /// * PUT：更新单个资源[HttpPut]
         /// * DELETE：删除[HttpDelete]
         /// </summary>
+        
         public ApiControllerBase() {
 
 

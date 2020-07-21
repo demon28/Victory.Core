@@ -132,9 +132,20 @@ namespace Victory.Core.Extensions
             return errorValue;
         }
 
-        public static DateTime ToDateTime(this long milliseconds)
+        /// <summary>
+        /// long时间戳 转时间
+        /// </summary>
+        /// <param name="timsapn">long</param>
+        /// <param name="ismill">是否是毫秒，毫秒X1000</param>
+        /// <returns></returns>
+        public static DateTime ToDateTime(this long timsapn, bool ismill = false)
         {
-            return DateTimeExtensions.TimestampStart.AddMilliseconds(milliseconds);
+            if (ismill)
+            {
+                timsapn = timsapn * 1000;
+            }
+
+            return DateTimeExtensions.TimestampStart.AddMilliseconds(timsapn);
         }
 
         public static bool ToBool(this object thisValue)

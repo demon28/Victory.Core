@@ -4,9 +4,9 @@ namespace Victory.Core.Extensions
     public static class DateTimeExtensions
     {
         /// <summary>
-        /// 时间戳起始日期
+        /// 时间戳起始日期（东8区）
         /// </summary>
-        public static DateTime TimestampStart = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        public static DateTime TimestampStart = new DateTime(1970, 1, 1, 8, 0, 0, 0);
 
         /// <summary>
         /// 转换为时间戳

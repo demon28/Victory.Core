@@ -5,32 +5,23 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Text;
-
+using Victory.Core.Enums;
 namespace Victory.Core.Helpers
 {
+
     /// <summary>
-    /// 日志等级
+    /// 单例模式初始化 
     /// </summary>
-    public enum LogLevel
-    {
-        Error,
-        Debug,
-        Warning,
-        Info
-    }
-    /// <summary>
-    /// 单例模式初始化
-    /// </summary>
-    public class Singleton
+    internal class Log4netSingleton
     {
         private ILog Log;
-        private static Singleton instance;
-        private Singleton() { }
-        public static Singleton getInstance()
+        private static Log4netSingleton instance;
+        private Log4netSingleton() { }
+        public static Log4netSingleton getInstance()
         {
             if (instance == null)
             {
-                instance = new Singleton();
+                instance = new Log4netSingleton();
             }
             return instance;
         }
@@ -65,7 +56,7 @@ namespace Victory.Core.Helpers
             var className = trace.GetFrame(1).GetMethod().DeclaringType;
             //获取方法名称
             MethodBase method = trace.GetFrame(1).GetMethod();
-            var type = "类名：" + className.Namespace + "\r\n\r\t\r\r方法名：" + method.Name;
+            var type = "类名：" + className.Namespace + "\r\n方法名：" + method.Name;
             WriteLog(LogLevel.Error, message, type);
         }
         /// <summary>
@@ -79,7 +70,7 @@ namespace Victory.Core.Helpers
             var className = trace.GetFrame(1).GetMethod().DeclaringType;
             //获取方法名称
             MethodBase method = trace.GetFrame(1).GetMethod();
-            var type = "类名：" + className.Namespace + "\r\n\r\t\r\r方法名：" + method.Name;
+            var type = "类名：" + className.Namespace + "\r\n方法名：" + method.Name;
             //记录日志
             WriteLog(LogLevel.Warning, message, type);
         }
@@ -94,7 +85,7 @@ namespace Victory.Core.Helpers
             var className = trace.GetFrame(1).GetMethod().DeclaringType;
             //获取方法名称
             MethodBase method = trace.GetFrame(1).GetMethod();
-            var type = "类名：" + className.Namespace + "\r\n\r\t\r\r方法名：" + method.Name;
+            var type = "类名：" + className.Namespace + "\r\n方法名：" + method.Name;
             //记录日志
             WriteLog(LogLevel.Info, message, type);
         }
@@ -109,7 +100,7 @@ namespace Victory.Core.Helpers
             var className = trace.GetFrame(1).GetMethod().DeclaringType;
             //获取方法名称
             MethodBase method = trace.GetFrame(1).GetMethod();
-            var type = "类名：" + className.Namespace + "\r\n\r\t\r\r方法名：" + method.Name;
+            var type = "类名：" + className.Namespace + "\r\n方法名：" + method.Name;
             //记录日志
             WriteLog(LogLevel.Debug, message, type);
         }
@@ -121,7 +112,7 @@ namespace Victory.Core.Helpers
         /// <param name="type">类名 方法名</param>
         private static void WriteLog(LogLevel logLevel, string message, string type)
         {
-            ILog Log = Singleton.getInstance().Init(type);
+            ILog Log = Log4netSingleton.getInstance().Init(type);
             switch (logLevel)
             {
                 case LogLevel.Debug:
