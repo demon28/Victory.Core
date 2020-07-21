@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Text;
 using Victory.Core.Extensions;
 
-namespace Victory.Core.Helpers
+namespace Victory.Core.Extensions
 {
     /// <summary>
     /// 数据类型转换
     /// </summary>
-    public static class UtilConvert
+    public static class ConvertExtensions
     {
         public static int ToInt(this object thisValue)
         {
