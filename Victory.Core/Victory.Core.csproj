@@ -4,8 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Near</Authors>
-    <Description>修改pagemode</Description>
-    <Version>1.0.9</Version>
+    <Description>增加全局异常捕捉的过滤器</Description>
+    <Version>1.0.10</Version>
   </PropertyGroup>
 
   <ItemGroup>
