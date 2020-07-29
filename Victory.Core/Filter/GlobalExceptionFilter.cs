@@ -31,12 +31,14 @@ namespace Victory.Core.Filter
                 {
                     controller = "Home",
                     action = "Error"
+                    
                 }));
 
             }
             else
             {
-                context.Result = new JsonResult(new { Success = false, Code = 405, Message = "您没有该功能操作权限！" });
+
+                context.Result = new JsonResult(new { Success = false, Code = 500, Message = ex.Message });
             }
         }
 
