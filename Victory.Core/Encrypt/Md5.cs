@@ -34,7 +34,7 @@ namespace Victory.Core.Encrypt
             /// </summary>
             /// <param name="password"></param>
             /// <returns></returns>
-            public static string Encrypt32(string password = "")
+            public static string Encrypt32(string password)
             {
                 if (password.IsNull())
                     return null;
