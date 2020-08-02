@@ -4,8 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Near</Authors>
-    <Description>修正md5的32位加密</Description>
-    <Version>1.0.12</Version>
+    <Description>增加获取设备信息</Description>
+    <Version>1.0.13</Version>
   </PropertyGroup>
 
   <ItemGroup>
