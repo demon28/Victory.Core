@@ -7,13 +7,8 @@ namespace Victory.Core.Test
     {
         static void Main(string[] args)
         {
-            PageModel page = new PageModel();
-
-            page.PageSize = 10;
-            page.TotalCount = 101;
-
-
-            Console.WriteLine("Hello World!"+ page.ToTalPage);
+          
+            Console.WriteLine("Hello World:" + Helpers.MachineHelper.GetCpuId());
         }
     }
 }
