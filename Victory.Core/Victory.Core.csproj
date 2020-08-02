@@ -4,8 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Near</Authors>
-    <Description>修改时间戳</Description>
-    <Version>1.0.8</Version>
+    <Description>修正md5的32位加密</Description>
+    <Version>1.0.12</Version>
   </PropertyGroup>
 
   <ItemGroup>

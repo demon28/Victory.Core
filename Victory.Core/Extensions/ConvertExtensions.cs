@@ -11,6 +11,12 @@ namespace Victory.Core.Extensions
     /// </summary>
     public static class ConvertExtensions
     {
+
+        /// <summary>
+        /// object转int，枚举类型请用ToInt64
+        /// </summary>
+        /// <param name="thisValue"></param>
+        /// <returns></returns>
         public static int ToInt(this object thisValue)
         {
             int reval = 0;
@@ -21,7 +27,11 @@ namespace Victory.Core.Extensions
             }
             return reval;
         }
-
+        /// <summary>
+        /// object转int，并设定默认值。枚举类型请用ToInt64，
+        /// </summary>
+        /// <param name="thisValue"></param>
+        /// <returns></returns>
         public static int ToInt(this object thisValue, int errorValue)
         {
             int reval;

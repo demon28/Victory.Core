@@ -25,7 +25,7 @@ namespace Victory.Core.Models
         /// <summary>
         /// 总共多少页
         /// </summary>
-        public int ToTalPage { get; set; }
+        public int ToTalPage { get { return TotalCount % PageSize == 0 ? TotalCount / PageSize : TotalCount / PageSize + 1; }  }
 
     }
 }
