@@ -20,13 +20,9 @@ namespace Victory.Core.Encrypt
         /// <returns></returns>
         public static string Encrypt16(string password)
         {
-            if (password.IsNull())
-                return null;
-
-            using (var md5 = MD5.Create())
-            {
-                return md5.ComputeHash(Encoding.UTF8.GetBytes(password)).ToHex();
-            }
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            string result = BitConverter.ToString(md5.ComputeHash(UTF8Encoding.Default.GetBytes(password)), 4, 8);
+            return result.Replace("-", "");
         }
 
         /// <summary>
@@ -36,31 +32,13 @@ namespace Victory.Core.Encrypt
         /// <returns></returns>
         public static string Encrypt32(string password)
         {
-            if (password.IsNull())
-                return null;
-
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
             byte[] bytes = Encoding.UTF8.GetBytes(password);
             string result = BitConverter.ToString(md5.ComputeHash(bytes));
             return result.Replace("-", "");
         }
 
-        /// <summary>
-        /// 64位MD5加密
-        /// </summary>
-        /// <param name="password"></param>
-        /// <returns></returns>
-        public static string Encrypt64(string password)
-        {
-            if (password.IsNull())
-                return null;
-
-            using (var md5 = MD5.Create())
-            {
-                byte[] s = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return s.ToBase64();
-            }
-        }
+     
     }
 
 

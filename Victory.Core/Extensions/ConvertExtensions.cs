@@ -71,6 +71,11 @@ namespace Victory.Core.Extensions
             return errorValue;
         }
 
+        /// <summary>
+        /// Tostring,安全转换，null返回空
+        /// </summary>
+        /// <param name="thisValue"></param>
+        /// <returns></returns>
         public static string ToString(this object thisValue)
         {
             if (thisValue != null) return thisValue.ToString().Trim();
@@ -122,6 +127,11 @@ namespace Victory.Core.Extensions
             return errorValue;
         }
 
+        /// <summary>
+        /// 时间戳转换为时间
+        /// </summary>
+        /// <param name="thisValue"></param>
+        /// <returns></returns>
         public static DateTime ToDateTime(this object thisValue)
         {
             DateTime reval = DateTime.MinValue;
@@ -132,6 +142,12 @@ namespace Victory.Core.Extensions
             return reval;
         }
 
+        /// <summary>
+        /// 时间戳转换为时间，给予默认时间
+        /// </summary>
+        /// <param name="thisValue"></param>
+        /// <param name="errorValue"></param>
+        /// <returns></returns>
         public static DateTime ToDateTime(this object thisValue, DateTime errorValue)
         {
             DateTime reval;
@@ -143,7 +159,7 @@ namespace Victory.Core.Extensions
         }
 
         /// <summary>
-        /// long时间戳 转时间
+        /// long类型 时间戳 转时间
         /// </summary>
         /// <param name="timsapn">long</param>
         /// <param name="ismill">是否是毫秒，毫秒X1000</param>
